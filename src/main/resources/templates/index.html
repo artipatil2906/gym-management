@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Conpatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness - the best fitness gim in toan</title>
+   <link rel="stylesheet" href="/css/style2.css" />
+   <link rel="stylesheet" href="/css/utils.css" />
+   <style>
+.logo1{
+      font-size: 2rem;
+    font-weight: bold;
+    color: #d36833;
+
+}
+    *{
+  margin: 0;
+  padding: 0;
+}
+body{
+  min-height: 100vh;
+  background: url('/img/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav{
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav li{
+  height: 50px;
+}
+nav a{
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+nav a:hover{
+  background-color: #f0f0f0;
+}
+nav li:first-child{
+  margin-right: auto;
+}
+.sidebar{
+  position: fixed;
+  top: 0; 
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sidebar li{
+  width: 100%;
+}
+.sidebar a{
+  width: 100%;
+}
+.menu-button{
+  display: none;
+}
+@media(max-width: 800px){
+  .section2{
+    padding: 0px;
+  }
+  .section3{
+    padding: 0px;
+  }
+   .section1 .flex {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+ 
+
+  .topleft {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .section2 .pricing-text{
+      padding: 0 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    /* text-align: left; */
+    width: 100%;
+    /* justify-content: center; */
+    margin: 0px 0px 0px -25px;
+  }
+  .boxes {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* spacing between boxes */
+  }
+
+  .box {
+    width: 90%; /* make box full width with some margin */
+    max-width: 400px;
+  }
+  .gymimg{
+    display: none;
+  }
+  .hideOnMobile{
+    display: none;
+  }
+  .menu-button{
+    display: block;
+  }
+}
+@media(max-width: 400px){
+  .sidebar{
+    width: 100%;
+  }
+}
+   </style>
+  </head>
+ 
+
+  <body class="overflow-x-hidden">
+    <div class="container mx-auto">
+      <header class="">
+        <nav>
+    <ul class="sidebar">
+      <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+   	  <li><a href="/home">Home</a></li>
+	       <li><a href="/about">About</a></li>
+	       <li><a href="/services">Services</a></li>
+	       <li><a href="/trainers">Our Trainers</a></li> 
+      <li><a href="/register">Join Us </a></li>
+      <li class="btn"><a href="/login">login</a></li>
+    </ul>
+    <ul>
+      <li class="logo1"><a href="#">FitnessGym</a></li>
+   	  <li class="hideOnMobile"><a href="/home">Home</a></li>
+	       <li class="hideOnMobile"><a href="/about">About</a></li>
+	       <li class="hideOnMobile"><a href="/services">Services</a></li>
+	       <li class="hideOnMobile"><a href="/trainers">Our Trainers</a></li>  
+      <li class="hideOnMobile"><a href="/register">Join Us</a></li>
+      <li class="hideOnMobile btn"><a href="/login">Login</a></li>
+      <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+    </ul>
+  </nav>
+        <hr />
+      </header>
+      <main class="min-h-screen">
+        <section class="section1">
+          <div class="flex">
+            <div class="topleft flex flex-col px-2 justify-center">
+              <div class="text-center">
+                <img class="dumbelling" src="/img/dambals2.png" alt="img for gym" />
+              </div>
+
+              <h1 class="my-1 text-center">The Best Fitness Gym</h1>
+              <p class="text-center">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta
+                non accusamus delectus enim fuga hic obcaecati, quidem iusto
+                vero, officia adipisci corporis quis quaerat dolor ipsa id. At,
+                non laboriosam deleniti tempore blanditiis quod vitae aperiam
+                velit ipsa.
+              </p>
+              
+            </div>
+            <div class="topright flex justify-center">
+              <img class="gymimg" src="/img/gym2.png" alt="" />
+            </div>
+          </div>
+        </section>
+        <hr />
+        <section class="section2">
+          <h1 class="text-center my-2">Pricing</h1>
+          <p class="my-2 pricing-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            reiciendis illum corrupti nihil fugiat ut eos veniam, unde in
+            blanditiis nobis ex iure debitis enim totam, voluptatum laborum
+            earum nam quos saepe ab porro nemo numquam. Perspiciatis ratione
+            similique aspernatur culpa neque?
+          </p>
+          <div class="boxes flex justify-center">
+            <div class="box">
+              <h2>Free</h2>
+              <ul>
+                <li class="highlighted">₹0/month</li>
+
+                <li>0 user included</li>
+                <li>2 GB of Strong</li>
+                <li>Email support</li>
+                <li>Help center access</li>
+                <li><button class="btn2">Sign Up Now</button></li>
+              </ul>
+            </div>
+            <div class="box">
+              <h2>Pro</h2>
+              <ul>
+                <li class="highlighted">₹150/month</li>
+
+                <li>0 user included</li>
+                <li>2 GB of Strong</li>
+                <li>Email support</li>
+                <li>Help center access</li>
+                <li><button class="btn2">Sign Up Now</button></li>
+              </ul>
+            </div>
+            <div class="box">
+              <h2>Enterprise</h2>
+              <ul>
+                <li class="highlighted">₹500/month</li>
+
+                <li>0 user included</li>
+                <li>2 GB of Strong</li>
+                <li>Email support</li>
+                <li>Help center access</li>
+                <li><button class="btn2">Sign Up Now</button></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <hr />
+        <section class="section3">
+           <h1 class="text-center my-2">Compare Plans</h1>
+                <div class="container plantable">
+                    <table class="table text-center">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Free</th>
+                          <th>Pro</th>
+                          <th>Enterprise</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="text-start">Public</th>
+                          <td>Yes</svg></td>
+                          <td>Yes</svg></td>
+                          <td>Yes</svg></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Private</th>
+                          <td>-</td>
+                          <td>Yes</svg></td>
+                          <td>Yes</svg></td>
+                        </tr>
+                      </tbody>
+              
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="text-start">Permissions</th>
+                          <td>Yes</svg></td>
+                          <td>Yes</svg></td>
+                          <td>Yes</svg></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Sharing</th>
+                          <td>-</td>
+                          <td>Yes</svg></td>
+                          <td>Yes</svg></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Unlimited members</th>
+                          <td>-</td>
+                          <td>Yes</svg></td>
+                          <td>Yes</svg></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Extra security</th>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>Yes</svg></td>
+                        </tr>
+                      </tbody>
+                    </table>
+        </section>
+        <hr />
+      </main>
+      <footer>
+        Copyright &copy; Fitnessgym.com | All right reserved 
+      </footer>
+    </div>
+   <!--  <script>
+      function toggleNavbar() {
+        const nav = document.getElementById("navbarMenu");
+        nav.classList.toggle("navbar-visible");
+      }
+    </script>  --> 
+  <script>
+    function showSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'flex'
+    }
+    function hideSidebar(){
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'none'
+    }
+  </script>
+
+  </body>
+</html>

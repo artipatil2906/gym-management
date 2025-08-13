@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/style2.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      .logo1 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #d36833;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      nav {
+        background-color: white;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 999;
+      }
+      nav ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      nav li {
+        height: 50px;
+      }
+      nav a {
+        height: 100%;
+        padding: 0 30px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: black;
+      }
+      nav a:hover {
+        background-color: #f0f0f0;
+      }
+      nav li:first-child {
+        margin-right: auto;
+      }
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 50px;
+        z-index: 1000;
+      }
+      .sidebar li {
+        width: 100%;
+      }
+      .sidebar a {
+        width: 100%;
+      }
+      .menu-button {
+        display: none;
+      }
+      @media (max-width: 800px) {
+        .section2 {
+          padding: 0px;
+        }
+        .sidebar li:first-child {
+          text-align: right;
+          width: 100%;
+          padding: 10px;
+        }
+
+        .section3 {
+          padding: 0px;
+        }
+        .section1 .flex {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding-bottom: 10px;
+        }
+
+        .topleft {
+          width: 100%;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        }
+        .section2 .pricing-text {
+          padding: 0 20px;
+          font-size: 1rem;
+          line-height: 1.6;
+          /* text-align: left; */
+          width: 100%;
+          /* justify-content: center; */
+          margin: 0px 0px 0px -25px;
+        }
+        .boxes {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px; /* spacing between boxes */
+        }
+
+        .box {
+          width: 90%; /* make box full width with some margin */
+          max-width: 400px;
+        }
+        .gymimg {
+          display: none;
+        }
+        .hideOnMobile {
+          display: none;
+        }
+        .menu-button {
+          display: block;
+        }
+      }
+      @media (max-width: 400px) {
+        .sidebar {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--Font Awesome CDN-->
+    <!--Herader is started -->
+    <header class="">
+      <nav>
+        <ul class="sidebar">
+          <li onclick="hideSidebar()">
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="26"
+                viewBox="0 96 960 960"
+                width="26"
+              >
+                <path
+                  d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+                /></svg
+            ></a>
+          </li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/trainers">Our Trainers</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li class="btn"><a href="/register">Join Us</a></li>
+        </ul>
+        <ul>
+          <li class="logo1">FitnessGym</li>
+          <li class="hideOnMobile"><a href="/">Home</a></li>
+          <li class="hideOnMobile"><a href="/about">About</a></li>
+          <li class="hideOnMobile"><a href="/services">Services</a></li>
+          <li class="hideOnMobile"><a href="/trainers">Our Trainers</a></li>
+          <li class="hideOnMobile"><a href="/contact">Contact Us</a></li>
+          <li class="hideOnMobile btn"><a href="/register">Join Us</a></li>
+          <li class="menu-button" onclick="showSidebar()">
+            <a href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="26"
+                viewBox="0 96 960 960"
+                width="26"
+              >
+                <path
+                  d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
+                /></svg
+            ></a>
+          </li>
+        </ul>
+      </nav>
+      <hr />
+    </header>
+    <!--Herader is ended -->
+    <!--banner design is started -->
+    <div class="home-container">
+      <div class="slide">
+        <div class="item" style="background-image: url(/img/img1.jpg)">
+          <div class="content">
+            <div class="name">Switzerland</div>
+            <div class="des">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+            </div>
+            <button>See More</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(/img/img2.jpg)">
+          <div class="content">
+            <div class="name">Finland</div>
+            <div class="des">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+            </div>
+            <button>See More</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(/img/img3.jpg)">
+          <div class="content">
+            <div class="name">Iceland</div>
+            <div class="des">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+            </div>
+            <button>See More</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(/img/img4.jpg)">
+          <div class="content">
+            <div class="name">Australia</div>
+            <div class="des">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+            </div>
+            <button>See More</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(/img/img5.jpg)">
+          <div class="content">
+            <div class="name">Netherland</div>
+            <div class="des">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+            </div>
+            <button>See More</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(/img/img6.jpg)">
+          <div class="content">
+            <div class="name">Ireland</div>
+            <div class="des">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+            </div>
+            <button>See More</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="button">
+        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <!--banner design is ended -->
+
+    <!-- Vision and Mission Section -->
+    <section class="vision-mission-section">
+      <div class="vm-box">
+        <h2>Our Vision</h2>
+        <p>
+          To inspire individuals to lead healthier and more active lives by
+          providing a supportive and empowering fitness community.
+        </p>
+      </div>
+      <div class="vm-box">
+        <h2>Our Mission</h2>
+        <p>
+          To offer high-quality fitness programs, expert coaching, and a
+          welcoming environment that helps every member achieve their personal
+          goals.
+        </p>
+      </div>
+    </section>
+    <!-- Vision and Mission Section end -->
+    <!-- Our achivements -->
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+      <h2 class="section-title">Our Achievements</h2>
+      <div class="achievement-cards">
+        <div class="achievement-card">
+          <div class="circle"><h3>10,000+</h3></div>
+          <p>Happy Members</p>
+        </div>
+        <div class="achievement-card">
+          <div class="circle"><h3>50+</h3></div>
+          <p>Expert Trainers</p>
+        </div>
+        <div class="achievement-card">
+          <div class="circle"><h3>15</h3></div>
+          <p>Branches Nationwide</p>
+        </div>
+        <div class="achievement-card">
+          <div class="circle"><h3>25</h3></div>
+          <p>Fitness Awards</p>
+        </div>
+      </div>
+    </section>
+    <!-- end the our achivements -->
+    <!--our trainers-->
+    <section class="our-trainers">
+      <h2>Our Trainers</h2>
+
+      <div class="trainers-grid">
+        <div class="trainer-card">
+          <img src="/img/trainer.jpeg" alt="Trainer 1" />
+          <h3>John Doe</h3>
+          <p>Fitness Expert</p>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="trainer-card">
+          <img src="/img/trainer.jpeg" alt="Trainer 2" />
+          <h3>Jane Smith</h3>
+          <p>Yoga Trainer</p>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="trainer-card">
+          <img src="/img/trainer.jpeg" alt="Trainer 2" />
+          <h3>Jane Smith</h3>
+          <p>Yoga Trainer</p>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="trainer-card">
+          <img src="/img/trainer.jpeg" alt="Trainer 2" />
+          <h3>Jane Smith</h3>
+          <p>Yoga Trainer</p>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="trainer-card">
+          <img src="/img/trainer.jpeg" alt="Trainer 2" />
+          <h3>Jane Smith</h3>
+          <p>Yoga Trainer</p>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="trainer-card">
+          <img src="/img/trainer.jpeg" alt="Trainer 2" />
+          <h3>Jane Smith</h3>
+          <p>Yoga Trainer</p>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://youtube.com" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <!-- Add more trainer cards -->
+      </div>
+
+      <div class="view-all-btn">
+        <button>View All</button>
+      </div>
+    </section>
+    <!--end trainers-->
+
+    <section class="testimonials">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-card active">
+          <img src="/img/testnomial1.jpg" alt="Rahul Patil" />
+          <div class="testimonial-content">
+            <p>
+              "This gym changed my life. Great equipment and friendly trainers!"
+            </p>
+            <h4>- Rahul Patil</h4>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <img src="testnomial2.jpg" alt="Sneha Joshi" />
+          <div class="testimonial-content">
+            <p>"Love the atmosphere and energy here. Highly recommend!"</p>
+            <h4>- Sneha Joshi</h4>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <img src="/img/testnomial3.jpg" alt="Amit Kulkarni" />
+          <div class="testimonial-content">
+            <p>
+              "Perfect place to stay fit. Trainers are very helpful and
+              motivating."
+            </p>
+            <h4>- Amit Kulkarni</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Column 1: Logo -->
+        <div class="footer-column">
+          <img src="/img/l.png" alt="Logo" class="footer-logo" />
+        </div>
+
+        <!-- Column 2: Menu -->
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-menu">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Privacy & Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul class="footer-menu">
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-location-dot"></i>123 Gym Street, Fitness
+                City, MH 411001</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-phone"></i> +91 9876543210</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa-solid fa-envelope"></i> info@gymfitness.com</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="footer-bottom">
+      <p>Copyright &copy; Fitnessgym.com | All rights reserved</p>
+    </div>
+
+    <script>
+      let next = document.querySelector(".next");
+      let prev = document.querySelector(".prev");
+
+      next.addEventListener("click", function () {
+        let items = document.querySelectorAll(".item");
+        document.querySelector(".slide").appendChild(items[0]);
+      });
+
+      prev.addEventListener("click", function () {
+        let items = document.querySelectorAll(".item");
+        document.querySelector(".slide").prepend(items[items.length - 1]); // here the length of items = 6
+      });
+    </script>
+    <script>
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
+      }
+
+      function hideSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+      }
+    </script>
+
+    <script>
+      let index = 0;
+      const cards = document.querySelectorAll(".testimonial-card");
+
+      function showNextTestimonial() {
+        cards[index].classList.remove("active");
+        index = (index + 1) % cards.length;
+        cards[index].classList.add("active");
+      }
+
+      setInterval(showNextTestimonial, 4000); // every 4 seconds
+    </script>
+  </body>
+</html>

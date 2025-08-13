@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <section class="signup-section">
+      <h2>Register</h2>
+      <form class="signup-form" th:action="@{/register}" th:object="${user}" method="post">
+        <input type="text" placeholder="First Name" th:field="*{firstName}" required />
+        <input type="text" placeholder="Last Name" th:field="*{lastName}" required />
+		<input type="tel" placeholder="Phone Number" th:field="*{phoneNumber}" required />
+		<select th:field="*{preferredPlan}" required>
+		  <option value="" disabled selected>Preferred Plan</option>
+		  <option value="basic">Basic Plan</option>
+		  <option value="standard">Standard Plan</option>
+		  <option value="premium">Premium Plan</option>
+		</select>
+		
+
+	
+
+        <input type="email" placeholder="Email Address" th:field="*{email}" required />
+        <input type="password" placeholder="Password" th:field="*{password}" required />
+		
+		
+		<textarea placeholder="Any Health Concerns?" th:field="*{healthConcerns}" rows="4"></textarea>
+        <button type="submit">Register</button>
+      </form>
+      <p th:if="${error}" th:text="${error}"></p>
+      <a href="/" class="back-btn">← Back to Home</a>
+    </section>
+  </body>
+</html>
